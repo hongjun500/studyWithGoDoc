@@ -13,7 +13,7 @@ func main() {
 	log.SetFlags(0)
 
 	//message, err := greetings.Hello("hongjun500")
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("hongjun500")
 	if err != nil {
 		log.Fatal(err)
 	}
