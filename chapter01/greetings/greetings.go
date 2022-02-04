@@ -13,7 +13,8 @@ func Hello(name string) (string, error) {
 		return "", errors.New("空名")
 	}
 	//return fmt.Sprintf("Hi, %v. Welcome!", randomFormat()), nil
-	return fmt.Sprintf(randomFormat(), name), nil
+	//return fmt.Sprintf(randomFormat(), name), nil
+	return fmt.Sprint(randomFormat()), nil
 }
 
 // Hellos 入参一个切片， 返回一个map和err
