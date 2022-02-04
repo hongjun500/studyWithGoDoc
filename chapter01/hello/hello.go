@@ -1,9 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 import "hongjun.com/greetings"
 
 func main() {
-  	message := greetings.Hello("hongjun500")
-  	fmt.Println(message)
+
+	//设置日志预定义的属性
+	log.SetPrefix("greetings:")
+	log.SetFlags(0)
+
+	//message, err := greetings.Hello("hongjun500")
+	message, err := greetings.Hello("")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(message)
 }
