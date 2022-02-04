@@ -16,6 +16,25 @@ func Hello(name string) (string, error) {
 	return fmt.Sprintf(randomFormat(), name), nil
 }
 
+// Hellos 入参一个切片， 返回一个map和err
+func Hellos(names []string) (map[string]string, error) {
+
+	//定义一个名称和消息关联的map
+	message := make(map[string]string)
+
+	for _, name := range names {
+		msg, err := Hello(name)
+		//如果有错误
+		if err != nil {
+			return nil, err
+		}
+
+		//将名称和消息关联绑定
+		message[name] = msg
+	}
+	return message, nil
+}
+
 // init 初始化一个变量值
 func init() {
 	rand.Seed(time.Now().UnixNano())
